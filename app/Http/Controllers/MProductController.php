@@ -33,12 +33,18 @@ class MProductController extends Controller
             $request->image->move(public_path('images'), $imageName);
         }
 
-        M_Product::create([
+        $room = M_Product::create([
             'product_name' => $request->product_name,
             'product_description' => $request->product_description,
             'product_price' => $request->product_price,
             'image' => $imageName,
         ]);
+
+        if ($room) {
+            dd('Data berhasil disimpan:', $room);
+        } else {
+            dd('Data gagal disimpan');
+        }
 
         return redirect()->route('admin.index')->with('produk sukses ditambahkan');
     }

@@ -17,8 +17,10 @@ class M_Transaction extends Model
         return $this->belongsTo(M_Product::class);
     }
 
+    protected $table = 'tb_transaction';
+    protected $primaryKey = 'id_trasaction';
     protected $fillable = [
-        'user_id',
+        'buyerName',
         'product_id',
         'product_price',
         'total',
