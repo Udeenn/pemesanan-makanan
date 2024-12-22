@@ -22,7 +22,7 @@ class TransactionController extends Controller
 
     public function create(){
         $transactions = M_Transaction::all();
-        return view('transactions.create', compact('transactions'));
+        return view('admin.transactions.create', compact('transactions'));
     }
 
     public function edit($id){

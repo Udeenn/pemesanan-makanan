@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container mx-4">
-        <h2>Daftar Produk</h2>
         <ul>
             <a class="btn btn-success" href="{{ route('admin.create') }}">Tambah Produk</a>
+            <a class="btn btn-primary" href="{{ route('admin.transactions.create') }}">Tambah Transaksi</a>
         </ul>
         @if (session('success'))
             <div class="alert alert-success">
@@ -15,7 +15,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No</th>
                     <th>Nama Produk</th>
                     <th>Deskripsi</th>
                     <th>Harga</th>

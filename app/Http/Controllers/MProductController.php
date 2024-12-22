@@ -40,12 +40,6 @@ class MProductController extends Controller
             'image' => $imageName,
         ]);
 
-        if ($room) {
-            dd('Data berhasil disimpan:', $room);
-        } else {
-            dd('Data gagal disimpan');
-        }
-
         return redirect()->route('admin.index')->with('produk sukses ditambahkan');
     }
 

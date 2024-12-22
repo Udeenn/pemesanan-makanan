@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MProductController;
+use App\Http\Controllers\MTransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,13 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // route admin
-    Route::get('/admin/products', [MProductController::class, 'index'])->name('admin.index');
+    Route::get('/admin', [MProductController::class, 'index'])->name('admin.index');
     Route::get('/admin/products/create', [MProductController::class, 'create'])->name('admin.create');
     Route::post('/admin/products', [MProductController::class, 'store'])->name('admin.store');
     Route::get('/admin/products/{id}/edit', [MProductController::class, 'edit'])->name('admin.edit');
     Route::put('/admin/products/{id}', [MProductController::class, 'update'])->name('admin.update');
     Route::delete('/admin/products/{id}', [MProductController::class, 'destroy'])->name('admin.destroy');
-
+    
+    Route::get('/admin/transactions/create', [MTransactionController::class, 'create'])->name('transactions.create');
 });
 
 require __DIR__.'/auth.php';
